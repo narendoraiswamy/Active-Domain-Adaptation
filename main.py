@@ -393,7 +393,7 @@ def test(loader):
             gt_labels_t.data.resize_(data_t[1].size()).copy_(data_t[1])
             feat = G(im_data_t)
             output1, norm_feat = F1(feat)
-            output1 = norm_feat.mm(torch.transpose(F.normalize(F1.fc.weight, dim=1), 0, 1))
+            output1 = norm_feat.mm(torch.transpose(F.normalize(F1.fc2.weight, dim=1), 0, 1))
             output_all = np.r_[output_all, output1.data.cpu().numpy()]
             size += im_data_t.size(0)
             pred1 = output1.data.max(1)[1]
