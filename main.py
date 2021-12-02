@@ -74,7 +74,7 @@ parser.add_argument('--patience', type=int, default=10,metavar='S',
                          'before terminating. (default: 5 (5000 iterations))')
 parser.add_argument('--early', action='store_false', default=True,
                     help='early stopping on validation or not')
-parser.add_argument('--update_pseudo', type=int, default=1501, metavar='P',
+parser.add_argument('--update_pseudo', type=int, default=2501, metavar='P',
                     help='when to update the pseudo labels ')
 parser.add_argument('--update_dist', type=int, default=200, metavar='P',
                     help='when to update the distances metric ')
