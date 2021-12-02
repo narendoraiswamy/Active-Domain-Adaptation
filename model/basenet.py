@@ -77,7 +77,7 @@ class Predictor(nn.Module):
     def __init__(self, num_class=64, inc=4096, temp=0.05):
         super(Predictor, self).__init__()
       #  self.fc1 = nn.Linear(inc, 2048) 
-        self.fc = nn.Linear(4096, num_class, bias=False)
+        self.fc2 = nn.Linear(4096, num_class, bias=False)
         self.num_class = num_class
         self.temp = temp
 
@@ -86,7 +86,7 @@ class Predictor(nn.Module):
         if reverse:
             x = grad_reverse(x, eta)
         x = F.normalize(x)
-        x_out = self.fc(x) / self.temp
+        x_out = self.fc2(x) / self.temp
         return x_out, x
 
 
